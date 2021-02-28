@@ -9,6 +9,9 @@ import NotFound from './NotFound'
 import PrivateRoute from './PrivateRoute'
 
 import {history} from '../history'
+import Client from '../pages/client'
+import News from '../pages/news'
+import Provider from '../pages/Provider'
 
 const Routes = () => (
     <Router history={history}>
@@ -16,6 +19,9 @@ const Routes = () => (
             <Route component={Login} exact path="/login"/>
             <Route component={Register} exact path="/register"/>
             <PrivateRoute component={Home} exact path="/"/>
+            <PrivateRoute component={Client} exact path="/client"/>
+            <PrivateRoute component={News} exact path="/news"/>
+            <PrivateRoute component={Provider} exact path="/provider"/>
             <PrivateRoute component={NotFound}/>
         </Switch>
     </Router>
