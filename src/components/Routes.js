@@ -12,6 +12,7 @@ import {history} from '../history'
 import Client from '../pages/client'
 import News from '../pages/news'
 import Provider from '../pages/Provider'
+import RegisterProvider from '../pages/RegisterProvider'
 
 const Routes = () => (
     <Router history={history}>
@@ -22,6 +23,8 @@ const Routes = () => (
             <PrivateRoute component={Client} exact path="/client"/>
             <PrivateRoute component={News} exact path="/news"/>
             <PrivateRoute component={Provider} exact path="/provider"/>
+            <PrivateRoute component={RegisterProvider} exact path="/provider/register"/>
+
             <PrivateRoute component={NotFound}/>
         </Switch>
     </Router>
