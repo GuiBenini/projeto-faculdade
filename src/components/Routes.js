@@ -11,6 +11,7 @@ import PrivateRoute from './PrivateRoute'
 import {history} from '../history'
 import Client from '../pages/client'
 import News from '../pages/news'
+import RegisterNews from '../pages/RegisterNews'
 import Provider from '../pages/Provider'
 import RegisterProvider from '../pages/RegisterProvider'
 
@@ -22,6 +23,7 @@ const Routes = () => (
             <PrivateRoute component={Home} exact path="/"/>
             <PrivateRoute component={Client} exact path="/client"/>
             <PrivateRoute component={News} exact path="/news"/>
+            <PrivateRoute component={RegisterNews} exact path="/news/register"/>
             <PrivateRoute component={Provider} exact path="/provider"/>
             <PrivateRoute component={RegisterProvider} exact path="/provider/register"/>
 

@@ -9,25 +9,26 @@ import '../login/Login.css'
 
 const RegisterProvider = () => {
     const handleSubmit = values => {
-        axios.post('http://localhost:8080/v1/api/provider', values)
+        axios.post('http://localhost:8080/v1/api/news', values)
             .then(resp => {
                 const { data } = resp
                 if (data) {
-                    history.push('/provider')
+                    history.push('/news')
                 }
             })
     }
 
     const validations = yup.object().shape({
-        name: yup.string().required(),
-        cnpj: yup.string().required(),
-        endereco: yup.string().required(),
-        telefone: yup.string().required(),
+        titulo: yup.string().required(),
+        subtitulo: yup.string().required(),
+        texto: yup.string().required(),
+        link: yup.string().required(),
+        foto: yup.string().required()
     })
     return (
         <>
-            <h1>Register</h1>
-            <p>Preencha os campos para se registrar</p>
+            <h1>Cadastrar Notícias</h1>
+            <p>Preencha os campos para se cadastrar uma nova notícia</p>
             <Formik
                 initialValues={{}}
                 onSubmit={handleSubmit}
@@ -36,50 +37,62 @@ const RegisterProvider = () => {
 
                 <Form className="Login">
                     <div className="Login-Group">
-                        <p>Nome</p>
+                        <p>Titulo</p>
                         <Field
-                            name="name"
+                            name="titulo"
                             className="Login-Field"
                         />
                         <ErrorMessage
                             component="span"
-                            name="name"
+                            name="titulo"
                             className="Login-Error"
                         />
                     </div>
                     <div className="Login-Group">
-                        <p>CNPJ</p>
+                        <p>Subtitulo</p>
                         <Field
-                            name="cnpj"
+                            name="subtitulo"
                             className="Login-Field"
                         />
                         <ErrorMessage
                             component="span"
-                            name="cnpj"
+                            name="subtitulo"
                             className="Login-Error"
                         />
                     </div>
                     <div className="Login-Group">
-                        <p>Endereço</p>
+                        <p>Texto</p>
                         <Field
-                            name="endereco"
+                            name="texto"
                             className="Login-Field"
                         />
                         <ErrorMessage
                             component="span"
-                            name="endereco"
+                            name="texto"
                             className="Login-Error"
                         />
                     </div>
                     <div className="Login-Group">
-                        <p>Telefone</p>
+                        <p>Link</p>
                         <Field
-                            name="telefone"
+                            name="link"
                             className="Login-Field"
                         />
                         <ErrorMessage
                             component="span"
-                            name="telefone"
+                            name="link"
+                            className="Login-Error"
+                        />
+                    </div>
+                    <div className="Login-Group">
+                        <p>Foto</p>
+                        <Field
+                            name="foto"
+                            className="Login-Field"
+                        />
+                        <ErrorMessage
+                            component="span"
+                            name="foto"
                             className="Login-Error"
                         />
                     </div>
